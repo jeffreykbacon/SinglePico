@@ -41,7 +41,7 @@ A ruleset for Reactive Programming:Single Pico Part 2
     fired {
         log "Raising found_long_trip";
         raise explicit event 'found_long_trip'
-          with found = "true"    
+          attributes event:attrs()    
     }
     else {
         log "Not raising found_long_trip";
