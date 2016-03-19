@@ -22,7 +22,7 @@ A ruleset for Reactive Programming:Single Pico Part 3
       long_trips_arr
     }
     short_trips = function() {
-      short_trips_arr = ent:trips.filter(function(x){ent:long_trips.index(x) != -1})
+      short_trips_arr = ent:trips.filter(function(x){ent:long_trips.index(x) != "-1"})
       short_trips_arr
     }
   }
@@ -31,11 +31,10 @@ A ruleset for Reactive Programming:Single Pico Part 3
   	pre {
   		mileage = event:attr("mileage").klog("our passed in Mileage: ");
       trip = timestamp + mileage;
-      index = ent:trips.index(1000);
   	}
   	{
   		send_directive("collect_trip") with
-        	trip_length = "#{index}";
+        	trip_length = "#{mileage}";
   	}
     always {
       set ent:trips ent:trips.append(trip)
