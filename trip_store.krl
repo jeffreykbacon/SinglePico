@@ -22,7 +22,7 @@ A ruleset for Reactive Programming:Single Pico Part 3
       long_trips_arr
     }
     short_trips = function() {
-      short_trips_arr = ent:trips.filter(function(x){ent:long_trips.index(x) != "-1"})
+      short_trips_arr = ent:trips.filter(function(x){ent:long_trips.index(x) > -1})
       short_trips_arr
     }
   }
